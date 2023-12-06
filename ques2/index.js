@@ -3,27 +3,24 @@
 Create a web app where I can input a text. Now create two buttons + and -. On clicking + increase the fontSize by 2px and vice versa.
 */
 
-const textInput = document.getElementById("text-input");
-const increaseBtn = document.getElementById("increase-btn");
-const decreaseBtn = document.getElementById("decrease-btn");
-const result = document.getElementById("result");
+const textInput = document.querySelector(".text-input");
+const increaseBtn = document.querySelector(".increase-btn");
+const decreaseBtn = document.querySelector(".decrease-btn");
+const result = document.querySelector(".result");
+
+increaseBtn.addEventListener("click", increseText);
+decreaseBtn.addEventListener("click", decreseText);
 
 let defaultFontSize = 16;
 
-function updateSize(){
-    textInput.style.fontSize = defaultFontSize;
-    result.textContent = `Size:${defaultFontSize}px`
+function increseText() {
+  defaultFontSize += 2;
+  textInput.style.fontSize = `${defaultFontSize}px`;
+  result.textContent = `${defaultFontSize}px`;
+}
+function decreseText() {
+  defaultFontSize -= 2;
+  textInput.style.fontSize = `${defaultFontSize}px`;
+  result.textContent = `${defaultFontSize}px`;
 }
 
-increaseBtn.addEventListener("click",()=>{
-    defaultFontSize += 2;
-    updateSize();
-})
-
-decreaseBtn.addEventListener("click",()=>{
-    defaultFontSize -= 2;
-    updateSize();
-})
-
-
-updateSize();
