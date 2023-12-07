@@ -8,19 +8,45 @@ const increaseBtn = document.querySelector(".increase-btn");
 const decreaseBtn = document.querySelector(".decrease-btn");
 const result = document.querySelector(".result");
 
-increaseBtn.addEventListener("click", increseText);
-decreaseBtn.addEventListener("click", decreseText);
-
 let defaultFontSize = 16;
 
-function increseText() {
-  defaultFontSize += 2;
-  textInput.style.fontSize = `${defaultFontSize}px`;
-  result.textContent = `${defaultFontSize}px`;
-}
-function decreseText() {
-  defaultFontSize -= 2;
-  textInput.style.fontSize = `${defaultFontSize}px`;
-  result.textContent = `${defaultFontSize}px`;
-}
+increaseBtn.addEventListener("click",()=>{
+defaultFontSize += 2;
+textInput.style.fontSize = `${defaultFontSize}px`
+})
+decreaseBtn.addEventListener("click",()=>{
+defaultFontSize -= 2;
+textInput.style.fontSize = `${defaultFontSize}px`
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// increaseBtn.addEventListener("click", increseText);
+// decreaseBtn.addEventListener("click", decreseText);
+
+// let defaultFontSize = 16;
+
+// function increseText() {
+//   defaultFontSize += 2;
+//   textInput.style.fontSize = `${defaultFontSize}px`;
+//   result.textContent = `${defaultFontSize}px`;
+// }
+// function decreseText() {
+//   defaultFontSize -= 2;
+//   textInput.style.fontSize = `${defaultFontSize}px`;
+//   result.textContent = `${defaultFontSize}px`;
+// }
 
