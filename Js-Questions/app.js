@@ -238,9 +238,6 @@ same process as we performed earlier it turn string to number but Js failed to i
 // Answer: false. ! is NOT.
 // ---------------------------------------------------------------------------]
 
-
-
-
 /* BASIC QUESTION ON JS  */
 // Question: What is the value of parseFloat('12.3.4')
 // Answer: 12.3
@@ -263,4 +260,161 @@ same process as we performed earlier it turn string to number but Js failed to i
 // console.log(typeof undefined);
 
 // ---------------------------------------------------------------------------]
-console.log(null == undefined);
+// Question:null == undefined
+/* 
+   Answer:
+   undefined: undefined is a primitive value that is automatically assigned to variables that have been declared but have not been assigned any value.
+   null: null is a special value that represents the intentional absence of any object value.
+   It must be assigned explicitly and is often used to indicate that a variable should have no value or that an object property should be empty.
+*/
+//Code:
+// console.log(null == undefined); //true loosely/explicitely check
+// console.log(null === undefined); //false stricly check type also
+
+// let a;
+// console.log(a); //undefined type is 'undefined'
+
+// let b = null;
+// console.log(b); //null type is "object"
+
+// console.log(a == b); // true(loose equality, they are both considered "falsy")
+// console.log(a === b); // false (strict equality, different types)
+
+// function newOne() {}
+// let result = newOne();
+// console.log(result); //undefined
+
+// let userData = {
+//   name: "sourabh",
+//   age: null,
+// };
+// console.log(userData.age); //null
+// ---------------------------------------------------------------------------]
+
+// Question: If var a = 2, b =3 what would be value of a && b
+// Answer: here the concept came of &&(AND) Operator what it does if first value is truthy value in case  it return majority of time after & operator value which is here 3
+// var a = 2,
+//   b = 3;
+// console.log(a && b);
+// ---------------------------------------------------------------------------]
+
+// Question: What is -9%2
+// Answer: -1 it return always first value symbol that is result of remainder
+// console.log(-9%2);
+// ---------------------------------------------------------------------------]
+
+/* Array base Question */
+
+// let a = [34,343,23,4];
+// let b = [34,2,34,4];
+// let result = a[3] === b[3];
+// console.log(result) // true
+/*here we'r comaparing for array element which is inside one,not for memory location, for more clear we specify index that we can easily compared value's  */
+// -------------------------------------------------//
+
+// let a = [34,343,2,2,3];
+// console.log(...a);
+/* "Destructuring, indicated by 'a', involves extracting all the elements from an array or object." */
+// -------------------------------------------------//
+
+// let data = -10 - 3;
+// console.log(data); //  - -x = +
+// let data2 = 10 - -12;
+// console.log(data2); //22 -- = +
+// -------------------------------------------------//
+
+// let set = new Set([1,23,4,4,3,4,2,5,1,3,2,6])
+// console.log(set);// {1, 23, 4, 3, 2, 5,6}
+// console.log(set instanceof Set); // true
+// console.log(typeof set); //object
+/*Note: A Set can only contain unique values. If you try to add a value that already exists in the set, it won't be added again.*
+ */
+// -------------------------------------------------//
+// let data = {name:"sourabh pande"};
+// console.log(delete data.name);
+// console.log(data); //{}
+// data.name = "prajwal zingare" // add
+// console.log(data);
+// data.name = "rahim sheikh"
+// console.log(data);// modify
+// console.log(delete data.name);//true
+// console.log(data);
+// delete either it will return true or false
+// -------------------------------------------------//
+
+// let data = {age:34};
+// console.log(delete data);//false not be able to delete object
+/* if in case want to delete use null or undefined */
+// data = null;
+// console.log(data);
+/* Explaination:The delete operator is specifically designed for deleting properties from objects, not for deleting the entire object itself. If you attempt to use delete on the entire object, it results in a syntax error. */
+// -------------------------------------------------//
+// Array distructuring
+// let userData = ["rahul","shankar","sourabh","chiku"];
+// let [x,,,p] = userData;
+// console.log(x,p);//rahul chiku
+/* The second element in the array is skipped by using an empty slot between commas , ,. consept of destructing is one*/
+// -------------------------------------------------//
+// let x = ["raj","suresh","dilshan"];
+// let [,y] = x;
+// console.log(y);// suresh
+//Explaination : To access any element without taking previous values, we can do just write comma.
+// Explaination : Here we did object destructuring.It's not store in continuos memory location but array store in continuoes memory location so that's why we used comma in an array.
+// -------------------------------------------------//
+
+// Object distructuring & loop
+
+
+// ex 1
+// let userData = {name:"sidharth",age:34,city:"nagpur"};
+// let {name:x,age,city:z} = userData;
+// console.log(x + " from " + z + " age is " + age)
+
+// ex 2
+// let userData = {name:"sourabh",deatails:{age:34,city:"nagpur"},address:"Guru deo 8",assets:{property:"farming",location:"near tea house"},pin:441201,area:"rular"};
+// let {name,deatails:{age,city:cityModerate},assets:{property:istates}, country="india", state="Maharashtra", ...x} = userData;
+// console.log(name,cityModerate,age,x,istates,country,state);
+// Explaination: here your all doubt clear reagarding distructuring;
+
+// ------------------------LOOP
+// for of and Object.entries
+
+// let userData = {name:"sourabh",city:"bhuyar", age:34};
+// // console.log(Object.values(userData));
+// let entryArray = Object.entries(userData); //it return array 
+// // console.log(entryArray);
+// for(let [key,value] of entryArray){
+//     console.log(key + ":" + value);
+// }
+
+// for in
+// let userData = { name: "sourabh", city: "bhuyar", age: 55 };
+// for (let key in userData) {
+//   // console.log(userData[key]);//it's way to access property in object
+//   console.log(key + ":" + userData[key]);
+// }
+
+// for loop 
+// let userData = { name: "sameer", city: "chandrapur", age: 50 };
+// let turnToArray = Object.values(userData);
+// 1st console.log(turnToArray);
+
+// for loop 
+// for(let i=0; i<turnToArray.length; i++){
+//     console.log(i + ":" + turnToArray[i]);
+// }
+
+// for Each  
+// turnToArray.forEach(val=>{
+//     console.log(val);
+// })
+// map loop 
+// let userValue = turnToArray.map((v)=>{
+// console.log(v);
+// })
+// -------------------------------------------------//
+
+let data ={name:"chandu"}
+let data1={city:"bangulore",address:"azhad chouk",pin:23232}
+let result = {...data, ...data1} //merge 2 objects
+console.log(result);

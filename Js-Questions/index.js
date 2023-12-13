@@ -152,6 +152,7 @@ console.log(null ? "true" : "false"); // false */
 // Question: What is -5%2
 // Answer:-1. the result of remainder always get the symbol of first operand
 // -------------------------------------
+
 /*  
 let a = [];
 let b = [];
