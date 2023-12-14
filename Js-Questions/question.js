@@ -76,14 +76,24 @@ Truthy Value: besides all are truthy value including array and object,non empty 
 // console.log(Boolean(true));//true
 // console.log(Boolean(0n));//false
 // console.log(Boolean(-0)); //false
-// console.log(typeof Boolean("")); boolean
+// console.log(Boolean(0n)); // false
+// console.log(Boolean(null)); // false
+// console.log(Boolean(undefined)); // false
+// console.log(Boolean(NaN)); // false
+// console.log(Boolean("")); // false
+// console.log(typeof Boolean("")); // boolean
+
 
 /* @TRUTHY - [ true, 1, -1, 1n, -1n, Infinity, -Infinity, " ", {}, []] */
 // console.log(Boolean(-2));//true
 // console.log(Boolean([])); //true
-// console.log(Boolean(Infinity));
-// console.log(Boolean(-Infinity));
-// console.log(typeof Boolean([]));
+// console.log(Boolean({})); //true
+// console.log(Boolean(-34));//true
+// console.log(Boolean(1));//true
+// console.log(Boolean(" "));
+// console.log(Boolean(Infinity));//true
+// console.log(Boolean(-Infinity));//true
+// console.log(typeof Boolean([]));//boolean
 /* ============================================================================== */
 /* boolean Value: we are checking true and false base on Truthy and falsy value as i mentioned above if any of them e.g 0,-0,infinity.... gave answer */
 // console.log("===== Boolean Value!");
@@ -388,33 +398,76 @@ same process as we performed earlier it turn string to number but Js failed to i
 // }
 
 // for in
-// let userData = { name: "sourabh", city: "bhuyar", age: 55 };
-// for (let key in userData) {
-//   // console.log(userData[key]);//it's way to access property in object
-//   console.log(key + ":" + userData[key]);
-// }
+/* let userData = { name: "sourabh", city: "bhuyar", age: 55 };
+for (let key in userData) {
+  // console.log(userData[key]);//it's way to access property in object userData[key] from obj
+  console.log(key + ":" + userData[key]);
+} */
 
-// for loop 
-// let userData = { name: "sameer", city: "chandrapur", age: 50 };
-// let turnToArray = Object.values(userData);
-// 1st console.log(turnToArray);
+/* for loop 
+let userData = { name: "sameer", city: "chandrapur", age: 50 };
+let turnToArray = Object.values(userData);
+1st console.log(turnToArray);
 
-// for loop 
-// for(let i=0; i<turnToArray.length; i++){
-//     console.log(i + ":" + turnToArray[i]);
-// }
+for loop 
+for(let i=0; i<turnToArray.length; i++){
+    console.log(i + ":" + turnToArray[i]);
+}
 
-// for Each  
-// turnToArray.forEach(val=>{
-//     console.log(val);
-// })
-// map loop 
-// let userValue = turnToArray.map((v)=>{
-// console.log(v);
-// })
+for Each  
+turnToArray.forEach(val=>{
+    console.log(val);
+})
+
+map loop 
+let userValue = turnToArray.map((v)=>{
+console.log(v);
+}) */
+
 // -------------------------------------------------//
 
-let data ={name:"chandu"}
+/* let data ={name:"chandu"}
 let data1={city:"bangulore",address:"azhad chouk",pin:23232}
 let result = {...data, ...data1} //merge 2 objects
-console.log(result);
+// console.log(result);
+
+let baseObject = {a:2,b:3,c:4};
+let copyObject = {...baseObject};
+// console.log(copyObject);
+
+let object1 = {p:1,q:2,r:5}
+let object2 = {a:5,b:20,c:50}
+console.log({...object1,...object2});
+
+// extend object 
+let baseOne = {a:2,b:3};
+let extendOne = {...baseOne,b:5, c:4,d:6}
+// console.log(extendOne);
+
+// neasted object
+let neastedObject = {a:53, b:{p:45,c:44}}
+let resultNeasted = {...neastedObject} 
+console.log(resultNeasted); */
+
+
+// Destructuring with Objects:
+// let obj = {a:1,b:{p:"saurabh",q:"gaurabh"},e:"eOne"};
+// let {a,b:{...hello},e} = obj;
+// console.log(a,hello,e);
+
+// OVERIGHT VALUE IF SAME 
+// let a = {a:34,b:"saurabh"};
+// let b = {c:"Gaurabh",a:99};
+// console.log({...a,...b});
+
+/*Explaination : using spread operator we use to merge the 2 objects. Three dots will pop out the property from an object and assign inside curly brackets. given the fact of spread is that we can only distructure within {} curly brases o.w not */
+
+// const name = "sourabh";
+// console.log(name()); ////Error: name is not a function
+// ------------------------------------------------------}
+
+// const result = false || {} || [] || null || 30;
+// console.log(result);
+//Explaination : OR operator will find first positive value. as soon as it find it will those value irrespective of others false & Null is a falsy value by default. {} is a positive value. It could not reach till 20 and null then.
+
+// ------------------------------------------------------}
