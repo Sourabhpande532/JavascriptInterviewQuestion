@@ -59,39 +59,39 @@ arr.forEach((el) => {
 // console.log("Unique value is ", uniqueValue);
 
 // -------------------------------------------------------------------]
-/* Q6 Give me Exapmple of return value via using above same questions but using different Array Value*/
+/* Q3 Give me Exapmple of return value via using above same questions but using different Array Value*/
 
 function removeDuplicate(arrVal) {
-    let findUniqueVal = [...new Set(arrVal)];
-    let findeDoubleNo = new Map();
-    // console.log(findeDoubleNo);// size 0
-  
-    arrVal.forEach((element) => {
-      //Check if already exits or not
-      if (findeDoubleNo.has(element)) {
-        // if yes, ++
-        findeDoubleNo.set(element, findeDoubleNo.get(element) + 1);
-      } else {
-        // o.w as it is
-        findeDoubleNo.set(element, 1);
-      }
-      // check looping line by line 
-      // console.log(findeDoubleNo); size:10
-    });
-  
-    return {
-      unique: findUniqueVal,
-      uniqueCount: findeDoubleNo,
-    };
-  }
-  let array = [45,46,46,47,48,47,49,50,51,52,49,53,54,55,53];
-  let result = removeDuplicate(array);
-//   console.log(result.unique);
-//   console.log(result.uniqueCount);
+  let findUniqueVal = [...new Set(arrVal)];
+  let findeDoubleNo = new Map();
+  // console.log(findeDoubleNo);// size 0
+
+  arrVal.forEach((element) => {
+    //Check if already exits or not
+    if (findeDoubleNo.has(element)) {
+      // if yes, ++
+      findeDoubleNo.set(element, findeDoubleNo.get(element) + 1);
+    } else {
+      // o.w as it is
+      findeDoubleNo.set(element, 1);
+    }
+    // check looping line by line
+    // console.log(findeDoubleNo); size:10
+  });
+
+  return {
+    unique: findUniqueVal,
+    uniqueCount: findeDoubleNo,
+  };
+}
+let array = [45, 46, 46, 47, 48, 47, 49, 50, 51, 52, 49, 53, 54, 55, 53];
+let results = removeDuplicate(array);
+//   console.log(results.unique);
+//   console.log(results.uniqueCount);
 
 // ------------------------------------------------------------------]
 
-/*Q5: Explain MAP & SET
+/*Q4: Explain MAP & SET
 Explanation:A Map object in JavaScript is a collection of key-value pairs where each key and value can be of any data type.
 It allows you to associate values with keys and provides methods for adding, retrieving, and deleting elements.
 It initializes an empty map that can be populated with key-value pairs later.
@@ -127,7 +127,7 @@ mySet.add(2);
 mySet.add(1);
 // console.log(mySet);
 // ----------------------------------------------------------------]
-// Ex. of return 
+// Ex. of return
 /* function remove(input){
     let y = [...new Set(input)]
     return {
@@ -139,9 +139,77 @@ let output = remove(x);
 console.log(output.key); */
 // ----------------------------------------------------------------]
 
+/*Q5 String reverse with reversing of individual words */
 
+/* function reverseString(string) {
+  let listOfChar = string.split("");
+  let reverse = listOfChar.reverse();
+  let reJoinString = reverse.join("");
+  return { key: reJoinString };
+}
+let word = "india is my country";
+let result = reverseString(word);
+console.log(result.key);
+// output : yrtnuoc ym si aidni */
 
+// Prictice
+/* function reverseWord(){
+  let char = "India is quite famous for tradition";
+  let reverChar = char.split("").reverse().join("");
+  return reverChar
+}
+console.log(reverseWord()); 
+output: noitidart rof suomaf etiuq si aidnI
+*/
+// ----------------------------------------------------------------]
 
+/* Q6.  Swapping of 2 numbers with third variable*/
 
+/* let a = 10;
+let b = 13;
+let c;
+c = a; //13
+a = b; //13
+b = c; //10
+console.log(a,b,c);//13,10,10 */
+// ----------------------------------------------------------------]
+/* Q7 - To find the index of an element from an array*/
 
+/* let country = ["india","USA","china","japan"];
+let findIndex = country.indexOf('japan');
+console.log(findIndex); */
+// ----------------------------------------------------------------]
 
+/* Q8 - To find the unique in array*/
+/* let listOfNum = new Set([12,332,3,32,12,12,3,1,2,3,4,2,5]);
+console.log(listOfNum); */ //remove duplicate
+
+// ----------------------------------------------------------------]
+/* Q9 - Write a JavaScript program which accept a number as input and insert dashes (-) between each two even numbers. For example if you accept 025468 the output should be 0-254-6-8. */
+
+function insertDashesBetweenEvens(inputNumber) {
+  const inputString = inputNumber.toString();
+  console.log(inputString);  //5942
+
+  let resultString = inputString[0];
+  // console.log(resultString); 
+
+  for (let i = 1; i < inputString.length; i++) {
+    const currentDigit = parseInt(inputString[i]);
+    // console.log(currentDigit); // 9,4,2
+    const previousDigit = parseInt(inputString[i - 1]);
+    console.log(previousDigit); //5,9,4
+
+    if (currentDigit % 2 === 0 && previousDigit % 2 === 0) {
+      resultString += '-';
+    }
+
+    resultString += currentDigit;
+  }
+
+  console.log(resultString);
+}
+
+// Example usage
+const inputNumber = 5942
+insertDashesBetweenEvens(inputNumber);
