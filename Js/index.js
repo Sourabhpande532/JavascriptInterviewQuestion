@@ -187,7 +187,7 @@ console.log(listOfNum); */ //remove duplicate
 // ----------------------------------------------------------------]
 /* Q9 - Write a JavaScript program which accept a number as input and insert dashes (-) between each two even numbers. For example if you accept 025468 the output should be 0-254-6-8. */
 
-function addDashOnEvenNum(num) {
+/*Ex:1  function addDashOnEvenNum(num) {
   let userString = num.toString();
   console.log(userString);
 
@@ -208,8 +208,9 @@ function addDashOnEvenNum(num) {
 }
 let inputNum = 3434364545;
 addDashOnEvenNum(inputNum);
+ */
 
-let input = document.getElementById("user-input");
+/*Ex:2 let input = document.getElementById("user-input");
 let buttonEvent = document.getElementById("button-check");
 let output = document.getElementById("para");
 buttonEvent.addEventListener("click", insertDash);
@@ -230,4 +231,44 @@ function insertDash() {
   console.log(result);
 }
 
-insertDash();
+insertDash(); */
+
+/* 
+Q10 - Write a JavaScript program to find the leap years in a given range of years. */
+
+/* function findLeapYear(startYear, endYear) {
+  // leap year either divided by 4 or 400 Not 100
+  for (let year = startYear; year <= endYear; year++) {
+    if ((year % 4 === 0 && year !== 100) || year % 400 === 0) {
+      console.log(year);
+    }
+  }
+}
+findLeapYear(2000, 2016); */
+
+let btn = document.getElementById("button-check");
+let userInputA = document.getElementById("user-input");
+let userInputB = document.getElementById("input2");
+let para = document.getElementById("para");
+
+btn.addEventListener("click", checkLeapYear);
+
+function checkLeapYear() {
+  const a = Number(userInputA.value);
+  const b = Number(userInputB.value);
+  let emptyArr = [];
+  // console.log(a, b);
+  for (let i = a; i <= b; i++) {
+    emptyArr.push(i);
+  }
+  console.log(emptyArr);
+  emptyArr.map((data) => {
+    if (data % 4 === 0) {
+      console.log(`it is a leap ${data} year`);
+      para.innerText += `it is a leap ${data} year\n`;
+    } else {
+      console.log(` It's Not leap year ${data}`);
+      para.innerText += `It's Not leap ${data} year\n `;
+    }
+  });
+}
