@@ -187,29 +187,47 @@ console.log(listOfNum); */ //remove duplicate
 // ----------------------------------------------------------------]
 /* Q9 - Write a JavaScript program which accept a number as input and insert dashes (-) between each two even numbers. For example if you accept 025468 the output should be 0-254-6-8. */
 
-function insertDashesBetweenEvens(inputNumber) {
-  const inputString = inputNumber.toString();
-  console.log(inputString);  //5942
+function addDashOnEvenNum(num) {
+  let userString = num.toString();
+  console.log(userString);
 
-  let resultString = inputString[0];
-  // console.log(resultString); 
+  let resultString = userString[0]; //2
 
-  for (let i = 1; i < inputString.length; i++) {
-    const currentDigit = parseInt(inputString[i]);
-    // console.log(currentDigit); // 9,4,2
-    const previousDigit = parseInt(inputString[i - 1]);
-    console.log(previousDigit); //5,9,4
-
-    if (currentDigit % 2 === 0 && previousDigit % 2 === 0) {
-      resultString += '-';
+  for (let i = 1; i < userString.length; i++) {
+    let currentValue = parseInt(userString[i]);
+    // console.log(currentValue); //5,4,6,8,0,1,2
+    let previousValue = parseInt(userString[i - 1]);
+    // console.log(previousValue);//2,5,4,6,8,0,1
+    if (currentValue % 2 === 0 && previousValue % 2 === 0) {
+      resultString = resultString + "-"; //add befour currentValue
     }
-
-    resultString += currentDigit;
+    resultString = resultString + currentValue;
   }
-
   console.log(resultString);
+
+}
+let inputNum = 3434364545;
+addDashOnEvenNum(inputNum);
+
+let input = document.getElementById("user-input");
+let buttonEvent = document.getElementById("button-check");
+let output = document.getElementById("para");
+buttonEvent.addEventListener("click", insertDash);
+
+function insertDash() {
+  let str = input.value;
+  // console.log(str[1]);
+  let result = [str[0]];
+  // console.log(result);
+  for (var x = 1; x < str.length; x++) {
+    if (str[x - 1] % 2 === 0 && str[x] % 2 === 0) {
+      result.push("-", str[x]);
+    } else {
+      result.push(str[x]);
+    }
+    output.innerText = result.join("");
+  }
+  console.log(result);
 }
 
-// Example usage
-const inputNumber = 5942
-insertDashesBetweenEvens(inputNumber);
+insertDash();
