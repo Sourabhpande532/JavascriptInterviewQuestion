@@ -209,7 +209,7 @@ console.log(listOfNum); */ //remove duplicate
 let inputNum = 3434364545;
 addDashOnEvenNum(inputNum);
  */
-
+// OR
 /*Ex:2 let input = document.getElementById("user-input");
 let buttonEvent = document.getElementById("button-check");
 let output = document.getElementById("para");
@@ -232,6 +232,7 @@ function insertDash() {
 }
 
 insertDash(); */
+// --------------------------------------------------------------}
 
 /* 
 Q10 - Write a JavaScript program to find the leap years in a given range of years. */
@@ -245,8 +246,8 @@ Q10 - Write a JavaScript program to find the leap years in a given range of year
   }
 }
 findLeapYear(2000, 2016); */
-
-let btn = document.getElementById("button-check");
+//OR
+/* let btn = document.getElementById("button-check");
 let userInputA = document.getElementById("user-input");
 let userInputB = document.getElementById("input2");
 let para = document.getElementById("para");
@@ -271,4 +272,104 @@ function checkLeapYear() {
       para.innerText += `It's Not leap ${data} year\n `;
     }
   });
+} */
+
+// --------------------------------------------------------------}
+/* Q11 - Write a JavaScript program which accept a string as input and swap the case of each character. For example if you input 'The Quick Brown Fox' the output should be 'tHE qUICK bROWN fOX'.  */
+
+/* function swapCase(swapChar) {
+  let resultSwap = "";
+  for (let i = 0; i < swapChar.length; i++) {
+    let currentValue = swapChar[i];
+    if (currentValue === currentValue.toUpperCase()) {
+      resultSwap += currentValue.toLowerCase();
+    } else {
+      resultSwap += currentValue.toUpperCase();
+    }
+  }
+  return resultSwap;
 }
+const viseVarsa = "The Quick Brown Fox rocK";
+const result = swapCase(viseVarsa);
+console.log(result); */
+
+/* let btn = document.getElementById("button-check");
+let userInputA = document.getElementById("user-input");
+btn.addEventListener("click", turnToSwap);
+
+function turnToSwap() {
+  let user = userInputA.value;
+  // console.log(user);
+  let turnInArray = user
+    .split("")
+    .map((eachItem) => {
+      // console.log(eachItem);
+     return eachItem === eachItem.toUpperCase()
+        ? eachItem.toLowerCase()
+        : eachItem.toUpperCase();
+    })
+    .join("");
+  console.log(turnInArray);
+}
+ */
+
+// --------------------------------------------------------------}
+
+/* Q12 - Create a index.js file and declare variables and assign string, boolean, undefined and null data types, Display all the value with there type. */
+
+/* let a = "sourabh";
+let number = 34;
+let b = true;
+let c = false;
+var d = undefined;
+const e = null;
+console.log(`The data type value of name ${a} is ${typeof a}`);
+console.log(`The data type of ${number} is ${typeof number}`);
+console.log(`Value of b is ${b} and type of b ${typeof b}`);
+console.log(`Value of c is ${c} and type of c ${typeof c}`);
+console.log(`Value of d is ${d} and type of d ${typeof d}`);
+console.log(`Value of e is ${e} and type of e ${typeof e}`); */
+
+// --------------------------------------------------------------}
+
+/*  Q13 - Declare variables to store your first name, last name, marital status, country and age and display them using interploation method. */
+/* let name = "sourabh"
+let lname = "pande"
+let maritalStatus = "no"
+let age = 23
+country = "india";
+console.log(`Hey, This is ${name} ${lname} & I'm form ${country} current age is ${age}`); 
+output : Hey, This is sourabh pande & I'm form india current age is 23
+*/
+
+// --------------------------------------------------------------}
+
+/*  Q14  Decalre a varibale and assign value to it and change all the string characters to capital letters using toUpperCase() method. */
+
+/* let name = "Hey,How are you doing";
+console.log(name.toUpperCase()); */
+// output : HEY,HOW ARE YOU DOING
+
+// --------------------------------------------------------------}
+
+/*  Q15  Check if the string contains a word Script using includes() method. */
+
+/* let text = "India is my country"
+let result = text.includes("country");
+console.log(result); */
+// output: true
+
+// --------------------------------------------------------------}
+
+/*  Q16 Split the string into an array using split() method using js */
+
+/* function splitString(char){
+let x = char.split(" ");
+return x;
+}
+console.log(splitString("The Quick box wrapped it into paper")); */
+
+// output: ['The', 'Quick', 'box', 'wrapped', 'it', 'into', 'paper']
+
+// --------------------------------------------------------------}
+
