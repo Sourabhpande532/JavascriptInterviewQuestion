@@ -373,3 +373,211 @@ console.log(splitString("The Quick box wrapped it into paper")); */
 
 // --------------------------------------------------------------}
 
+/* Q17 'Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon' split the string at the comma and change it to an array. */
+
+/* const hubIt = "Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon"
+const result = hubIt.split(",");
+console.log(result); */
+// output
+/* [
+    'Facebook',
+    ' Google',
+    ' Microsoft',
+    ' Apple',
+    ' IBM',
+    ' Oracle',
+    ' Amazon'
+  ] */
+// --------------------------------------------------------------}
+
+/* Q18 Use search to find the position of the first occurrence of the word because in the following sentence:'You cannot end a sentence with because because because is a conjunction'
+Explaination: indexOf it's property is used to determine index number;
+*/
+
+/* let text = "You cannot end a sentence with because because because is a conjunction"
+let searchIndexNumber = text.indexOf("cannot");
+console.log(searchIndexNumber); */ //4
+
+// --------------------------------------------------------------}
+/* Q19 Explain lastIndexOf
+   Explain:
+   -The lastIndexOf() method returns the index (position) of the last occurrence of a specified value in a string. The lastIndexOf() method searches the string from the end to the beginning. The lastIndexOf() method returns the index from the beginning (position 0)
+   -The lastIndexOf() method returns -1 if the value is not found.
+
+*/
+
+/* var str = "Departed Train";
+var index = str.lastIndexOf("ed Tr");
+console.log(index);
+console.log("Departed Train before another Train".lastIndexOf("Train"));
+ */
+// let text = "Hello planet earth, you are a great planet.";
+// let result = text.lastIndexOf("planet", 100);
+// console.log(result);
+
+/* let a = "sourabh is web developer,web devloper";
+console.log(a.lastIndexOf("web"));
+console.log(a.lastIndexOf("w")); */
+
+//last index of means last occurence of specified value in stiring.
+// let a = "Two writers collaborated on the script for the film script.";
+// console.log(a.lastIndexOf("script"));
+// --------------------------------------------------------------}
+
+/* Q20: Use trim() to remove any trailing whitespace at the beginning and the end of a string.
+Explain: The trim() method removes whitespace from both sides of a string.
+         The trim() method does not change the original string.
+*/
+
+/* let text = "     sourabh pande home is near to temples    "
+// console.log(text);
+let removeSpace = text.trim();
+// console.log(removeSpace); */
+
+// --------------------------------------------------------------}
+/* Q21 Boolean value is either true or false.
+   Write three JavaScript statement which provide truthy value.
+   Write three JavaScript statement which provide falsy value.
+*/
+
+// Truth value
+// let truthyValue = 1 ; // numric value other than 0;
+
+// let truthyValue2 = "sourabh" // true it's non-empty
+// console.log("hello" === true);//false why false type is different
+// console.log([] === true); //false
+// console.log({} === true); // false
+// console.log(1 == true); // true
+// console.log(true === true);//true
+// console.log(12>11); // true
+// console.log((function(){}) === true);
+/* An empty function is truthy, but the strict equality check returns false due to the type difference between the function and the boolean true. */
+
+// console.log((b1 = true && true)); // true
+/* In the expression b1 = true && true, the && (logical AND) operator is used. The && operator returns the value of the second operand if the first operand is truthy; otherwise, it returns the value of the first operand. */
+
+// let p = "sourabh"
+// let q = 34;
+// console.log(typeof p === "string" && typeof q === "number");
+
+// -------------------------
+
+// falsy value
+// console.log("" == false); // false
+// console.log(0 == false); //true
+// console.log(false === false); // true
+// console.log(-0 == false);// true
+// // console.log([] === false); //false
+// // console.log({} === false); // false .
+// console.log(Symbol() === false); // false
+// console.log(new Set() === false); //false
+// console.log(new Map() === false); //false
+// console.log((function(){})===false);//false
+// console.log(null === false);//false
+// console.log(undefined === false); //false
+// console.log(true == 0); //false
+// let a = 1;
+// let b = -2
+// console.log(a>0 && b>0); //false
+// console.log(false && "rahim");//false
+
+// --------------------------------------------------------------}
+/* Q22: Figure out the result of the following comparison expression first without using console.log(). After you decide the result confirm it using console.log()
+    - 4 > 3
+    - 4 >= 3
+    - 4 < 3
+    - 4 <= 3
+    - 4 == 4
+    - 4 === 4
+    - 4 != 4
+    - 4 !== 4
+    - 4 != '4'
+    - 4 == '4'
+    - 4 === '4'
+    - Find the length of python and jargon and make a falsy comparison statement.
+*/
+
+// console.log(4 > 3); // true
+// /* 4 is greter than 3 i.e true */
+// console.log(4 >= 4); // true
+// /* 4 is greter than equal to 4 i.e true */
+// console.log(4 < 3); // false
+// /* 3 is less than 4 but in case vice versa i.e false */
+// console.log(4 <= 3); // false
+// /* 4 is greter than equal to 3 but in case vice versa i.e false */
+// console.log(4 == 4); // true - check for value
+// console.log(4 === "4"); //false- check both type and value i.e false
+// console.log(4 != 4); //false
+// /* because 4 is equal to 4 i.e false */
+// console.log(4 != 5); // true
+// /* now 4 is not equal to 5 i.e true */
+// console.log(4 != "4"); // false
+// console.log(4 !== "4"); // true
+// /* here check for data type as well value i.e true */
+// console.log(4 !== 4); // false
+// /* both are same i.e false */
+// console.log(4 !== 9);
+// /* the condition is true due to no equal to */
+// console.log("4" !== 4); // true
+// /* data type this time string  */
+// console.log(4 == 4); //true
+// console.log(4 === 4); // true
+// console.log(4 == "4"); // true
+// console.log(4 === "4"); //false
+
+/* let p = "jargon";
+let q = "python";
+if (p.length !== q.length) {
+  console.log(true);
+} else {
+  console.log(false,'both are same, thus');
+}
+
+// output : false 
+let a = "12345";
+let b = 12345;
+
+if(a !== b){
+  console.log(true,"check for both data type & value, thus");
+}else{
+  console.log(false);
+}
+ */
+
+// --------------------------------------------------------------}
+/* Q23: using expression perform operation on array object & function */
+
+/* // Functions
+let func1 = function() { return true; };
+let func2 = function() { return false; };
+console.log(func1 === func2);    // false (different function references)
+console.log(func1 !== func2);    //true 
+
+
+// Arrays
+let array1 = [1, 2, 3];
+let array2 = [1, 2, 3];
+console.log(array1 === array2);  // false (different array references)
+console.log(array1 !== array2); // true 
+
+
+// Objects
+let obj1 = { key: 'value' };
+let obj2 = { key: 'value' };
+console.log(obj1 === obj2);      // false (different object references)
+console.log(obj1 !== obj2); // true 
+
+
+// Combining objects and comparison
+let anotherObj = { key: 'value' };
+console.log(obj1 === anotherObj); // false (different object references)
+console.log(obj1 !== anotherObj); //true 
+
+// Arrays with length property
+let arr1 = [1, 2, 3];
+let arr2 = [1, 2, 3, 4];
+
+console.log(arr1.length === arr2.length); // false (different array lengths)
+console.log(arr1.length !== arr2.length); // true  */
+
+// --------------------------------------------------------------}
