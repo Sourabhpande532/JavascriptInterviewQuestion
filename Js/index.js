@@ -581,3 +581,180 @@ console.log(arr1.length === arr2.length); // false (different array lengths)
 console.log(arr1.length !== arr2.length); // true  */
 
 // --------------------------------------------------------------}
+/* Q24 
+19. Use the Date object to do the following activities
+    - What is the year today?
+    - What is the month today as a number?
+    - What is the date today?
+    - What is the day today as a number?
+    - What is the hours now?
+    - What is the minutes now?
+    - Find out the numbers of seconds elapsed from January 1, 1970 to now.
+    Ans: 
+*/
+
+/* let date = new Date();
+let elapsed = new date(1991,1,1)
+console.log(date.getFullYear());
+console.log(date.getMonth());
+console.log(date.getDate());
+console.log(date.getDay());
+console.log(date.getHours());
+console.log(date.getMilliseconds());
+console.log(date - elapsed); */
+
+// --------------------------------------------------------------}
+
+/* Q25: Write a script that prompt the user to enter base and height of the triangle and calculate an area of a triangle (area = 0.5 x b x h). */
+
+/* let promptA = prompt("Enter base of triangle ?");
+let promptB = prompt("Enter hight of triangle ?")
+
+let area = (promptA * promptB)/2
+console.log(area);
+
+function calculateAreaOfTriangle(base,height){
+let calculateArea = 0.5 * base * height
+console.log('area of triangle is ', calculateArea);
+}
+
+calculateAreaOfTriangle(promptA,promptB); */
+
+// --------------------------------------------------------------}Q26. Slope is m = (y2-y1)/(x2-x1). Find the slope between point (2, 2) and point(6,10)
+
+/* Q26: Slope is m = (y2-y1)/(x2-x1). Find the slope between point (2, 2) and point(6,10);
+ */
+
+/* function calculateSlop(x1, y1, x2, y2) { */
+/*   let calculate = (y2 - y1) / (x2 - x1); */
+/*   return calculate; */
+/* } */
+/*  */
+/* const slope = calculateSlop(2, 2, 6, 10); */
+/* console.log("The slope is between points", slope); */
+
+// --------------------------------------------------------------}
+
+/* Q27: Get radius using prompt and calculate the area of a circle (area = pi x r x r) and circumference of a circle(c = 2 x pi x r) where pi = 3.14. */
+
+/* let radius = prompt("Enter the radius of Circle");
+
+if (radius != 0) {
+  let pi = 3.14;
+  let areaOfCircle = pi * radius * radius;
+  console.log("area of circle is ", areaOfCircle.toFixed(2));
+  let circumferenceOfCircle = 2 * pi * radius;
+  console.log("circumference of circle is ", circumferenceOfCircle.toFixed(2));
+} else {
+  alert("Enter valid Number !");
+}
+// OR
+if (isNaN(radius)) {
+  alert("Mention valid Number !");
+} else {
+  let pi = 3.14;
+  let areaOfCircle = pi * radius * radius;
+  console.log("area of circle is ", areaOfCircle.toFixed(2));
+  let circumferenceOfCircle = 2 * pi * radius;
+  console.log("circumference of circle is ", circumferenceOfCircle.toFixed(2));
+}
+
+OR// using function
+
+let radius = parseFloat(prompt("Enter radius"));
+function calculate(radius) {
+  if (isNaN(radius)) {
+    confirm("enter number");
+  } else {
+    let pi = 3.14;
+    let areaOfCircle = pi * radius * radius;
+    console.log("area of circle is ", areaOfCircle.toFixed(2));
+    let circumferenceOfCircle = 2 * pi * radius;
+    console.log(
+      "circumference of circle is ",
+      circumferenceOfCircle.toFixed(2)
+    );
+  }
+}
+calculate(radius);
+ */
+
+// --------------------------------------------------------------}
+/* Q28: Get user input using prompt(“Enter your age:”). If user is 18 or older , give feedback:'You are old enough to drive' but if not 18 give another feedback stating to wait for the number of years he needs to turn 18.  */
+
+/* let userAge = parseInt(prompt("Enter Your Age"));
+
+if (isNaN(userAge)) {
+  confirm("invalid Error! plese Enter valid Number");
+} else {
+  if (userAge >= 18) {
+    console.log("You are old enough to drive");
+  } else {
+    let yearToLeft = 18 - userAge;
+    console.log(
+      `you need to wait at least ${yearToLeft} year to run car or any vehical.`
+    );
+  }
+} */
+
+// --------------------------------------------------------------}
+
+/* Q29 Even numbers are divisible by 2 and the remainder is zero. How do you check, if a number is even or not using JavaScript? */
+
+/* let userInput = parseFloat(prompt("Enter either even or odd number"));
+
+if (isNaN(userInput)) {
+  confirm("invalid Error, Please Enter Number");
+} else {
+  userInput % 2 === 0 ? alert("Even Number") : alert("Odd Number");
+} */
+
+// --------------------------------------------------------------}
+
+/* Q30:
+25. Write a code which can give grades to students according to theirs scores:
+    - 80-100, A
+    - 70-89, B
+    - 60-69, C
+    - 50-59, D
+    - 0-49, F
+ */
+/* let calculateGrade = parseInt(prompt("Enter %"));
+if (isNaN(calculateGrade)) {
+  alert("invalid");
+} else {
+  if (calculateGrade >= 80 && calculateGrade <= 100) {
+    alert("You pass with Grade A 🎉🎊");
+  } else if (calculateGrade >= 65 && calculateGrade <= 79) {
+    alert("You pass with Grade B 🎉🎊");
+  } else if (calculateGrade >= 50 && calculateGrade <= 65) {
+    alert("You pass with Grade c 😏");
+  } else if (calculateGrade >= 35 && calculateGrade <= 50) {
+    alert("You pass with Grade D 😥");
+  } else {
+    alert(":YOU Failed 🎺🕯️");
+  }
+} */
+
+/* function assignGrade(score) {
+  if (score >= 80 && score <= 100) {
+    return "Congrates 🎊🎉 You Pass with A";
+  } else if (score >= 50 && score <= 80) {
+    return "congrates You pass with grade B";
+  } else if (score >= 1 && score <= 35) {
+    return "You Failed 😥";
+  } else {
+    return "invalid Score range between should be 1 to 100";
+  }
+}
+let score = prompt("Enter Your Score !");
+if (isNaN(score)) {
+  alert("invalid Score");
+} else {
+  let grade = assignGrade(score);
+  console.log(`Your Score is ${score} & ${grade}`);
+}
+
+ */
+// --------------------------------------------------------------}
+/* Q31:problem steatment find the area of triangle whose 3 sides are given. with javascript  */
