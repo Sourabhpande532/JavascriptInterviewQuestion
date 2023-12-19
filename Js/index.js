@@ -757,4 +757,57 @@ if (isNaN(score)) {
 
  */
 // --------------------------------------------------------------}
-/* Q31:problem steatment find the area of triangle whose 3 sides are given. with javascript  */
+/* 
+Q31:problem steatment find the area of triangle whose 3 sides are given. with javascript 
+Explaination: to perform operation on that
+we need formula
+formula : A = s⋅(s−a)⋅(s−b)⋅(s−c)
+​where s is the semi-perimeter of the triangle, calculated as:
+formula : s = a+b+c/2
+*/
+
+/* function calculateTriangleThreeSides(a, b, c) {
+  //calculate Semi-Perimeter
+  let s = (a + b + c) / 2;
+  // Calculate the area using Heron's formula
+  let area = Math.sqrt(s * (s - a) * (s - b) * (s - c));
+  return area;
+}
+let sideA = 3;
+let sideB = 6;
+let sideC = 7;
+let resultTriangle = calculateTriangleThreeSides(sideA, sideB, sideC);
+console.log("the area of triangle", resultTriangle.toFixed(2)); */
+
+// OR
+
+/* let input1 = document.getElementById("user-input");
+let input2 = document.getElementById("input2");
+let input3 = document.getElementById("input3");
+let btn = document.getElementById("button-check");
+btn.addEventListener("click", calculateArea);
+
+function calculateArea() {
+  let userLength1 = Number(input1.value);
+  let userLenght2 = Number(input2.value);
+  let userLenght3 = Number(input3.value);
+
+  if(userLength1 && userLenght2 && userLenght3){
+    let s = (userLength1 + userLenght2 + userLenght3)/2;
+
+    let area = Math.sqrt(
+      s * (s - userLength1) * (s - userLenght2) * (s - userLenght3)
+    );
+    console.log("area of triangle is ", area.toFixed(2));
+  }else{
+    alert("invalid")
+  }
+
+}  
+// Ref: https://www.cuemath.com/measurement/area-of-triangle-with-3-sides/
+*/
+
+
+/* 
+32. Write a JavaScript for loop that will iterate from 0 to 15. For each iteration, it will check if the current number is odd or even, and display a message to the screen
+*/
