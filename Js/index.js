@@ -807,7 +807,64 @@ function calculateArea() {
 // Ref: https://www.cuemath.com/measurement/area-of-triangle-with-3-sides/
 */
 
-
 /* 
 32. Write a JavaScript for loop that will iterate from 0 to 15. For each iteration, it will check if the current number is odd or even, and display a message to the screen
 */
+
+/* for(let i = 0; i<=15;i++){
+  if(i % 2 === 0){
+    console.log(i, "is even Number");
+  }else{
+    console.log(i, "is odd Number");
+  }
+} */
+// OR
+/* let startNum = parseInt(prompt("Enter start Number"));
+let endNum = parseInt(prompt("Enter end Number"));
+if (isNaN(startNum) || isNaN(endNum)) {
+  alert("Enter only number");
+} else {
+  for (let i = startNum; i <= endNum; i++) {
+    if (i % 2 === 0) {
+      console.log(i, "is even number");
+    } else if (i % 2 !== 0) {
+      console.log(i, " is Odd Number");
+    }
+  }
+} */
+
+/* let button = document.getElementById("button-check");
+let output = document.getElementById("output");
+button.addEventListener("click", IsOddOrEven);
+
+function IsOddOrEven(){
+  let a = 15;
+  for(let i=0; i<=a; i++){
+    if(i%2===0){
+      console.log(i," is even Number");
+    }else if(i%2 !== 0){
+      console.log(i,"is odd number");
+    }
+  }
+} */
+
+/* what if store value in array example*/
+
+/* let startNum = parseInt(prompt("Enter start Number"));
+let endNum = parseInt(prompt("Enter end Number"));
+if (isNaN(startNum) || isNaN(endNum)) {
+  alert("Enter only number");
+} else {
+  let x = [];
+  for (let i = startNum; i <= endNum; i++) {
+    x.push(i);
+  }
+  console.log(x);
+  x.map((num) => {
+    if (num % 2 === 0) {
+      console.log(num, "is even number");
+    } else {
+      console.log(num, "is odd number");
+    }
+  });
+} */
