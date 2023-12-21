@@ -1,3 +1,8 @@
+
+/* Note: In JavaScript, you can access object properties using either dot notation (object.property) or square bracket notation (object['property']).
+ex: let x = {a:34,b:"sourabh"};
+    console.log(x["a"]); ensure that should be in string*/
+
 /* Q1-> Write a JavaScript function to check whether an input is a string or not  */
 
 // 1)E.x
@@ -41,7 +46,10 @@ let arr = [55, 44, 55, 67, 67, 67, 67, 8, 8, 8, 8, 8, 65, 1, 2, 3, 3, 34, 5];
 let uniqueValue = [...new Set(arr)]; // ||
 // let uniqueValue = Array.from(new Set(arr))
 
+// Find the count of each element
 let countDoubleNumber = new Map();
+/* A Map object in JavaScript is a collection of key-value pairs where each key and value can be of any data type. */
+
 arr.forEach((el) => {
   // Check if the element is already a key in the map
   if (countDoubleNumber.has(el)) {
@@ -63,6 +71,8 @@ arr.forEach((el) => {
 
 function removeDuplicate(arrVal) {
   let findUniqueVal = [...new Set(arrVal)];
+
+ // Find the count of each element
   let findeDoubleNo = new Map();
   // console.log(findeDoubleNo);// size 0
 

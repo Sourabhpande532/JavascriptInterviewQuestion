@@ -1,0 +1,45 @@
+/* 
+For JavaScript Theorytical questions: "https://github.com/sudheerj/javascript-interview-questions"
+
+Live practice in practice folder on local machine adding answer hear .
+Practicing the code question from Running Github
+====================================================================================================================
+Code 1: Remove Duplicate characters from String
+function removeDuplicateCharacters() {
+  var string='priya riya supriya'
+  let result= string.split('').filter((item, index, arr)=> {
+               return arr.indexOf(item) == index;
+               }).join('');
+  return result;
+}
+console.log(removeDuplicateCharacters());
+====================================================================================================================
+Code 2: Remove Duplicate characters from array of element and find the count of an elements using set object
+var arr = [55, 44, 55,67,67,67,67,8,8,8,8,8,65,1,2,3,3,34,5];
+var unique = [...new Set(arr)]
+console.log(unique) //output: [55, 44, 67, 8, 65, 1, 2, 3, 34, 5]
+console.log(unique.length) //output: 10
+====================================================================================================================
+Code 3: Remove Duplicate characters from array of element using filter
+var myArray = ['a', 1, 'a', 2, '1'];
+var unique = myArray.filter((value, index, arr) => arr.indexOf(value) === index);
+====================================================================================================================
+Code 4:String reverse without reversing of individual words (Array of elements can be reverse with reverse() method but for string it is won't possible so required to split 
+and then join().
+function removeDuplicates(){
+   var string ="India is my country"
+   let result = string.split('').reverse().join('').split(' ').reverse().join(' ')
+   return result
+}
+console.log(removeDuplicates()) 
+output = "aidnI si ym yrtnuoc"
+====================================================================================================================
+Code 5:String reverse with reversing of individual words
+function withReverse(){
+   var string ="India is my country"
+   let result = string.split('').reverse().join('')
+   return result
+}
+console.log(withReverse())
+output = "yrtnuoc ym si aidnI"
+*/
