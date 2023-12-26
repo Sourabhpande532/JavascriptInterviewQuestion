@@ -1,0 +1,34 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q5</title>
+</head>
+
+<body>
+    <!-- Here's an API. Create a web app to call this API with your full name and print the response. This could be extended where we ask you to do something with the response. Like add a text, or capitalise etc. -->
+    <input type="text" id="input">
+    <button class="print-btn">prient</button>
+    <p class="display-output"></p>
+    <script>
+        let userInput = document.querySelector("#input");
+        let btn = document.querySelector(".print-btn");
+        let ouput = document.querySelector(".display-output");
+
+        btn.addEventListener("click",performOperationOnApi);
+
+        let Url = `https://lessonfourapi.tanaypratap.repl.co/translate/yoda.json?text=`
+
+        function performOperationOnApi(){
+            let userText = userInput.value;
+            fetch(Url + userText)
+            .then(Response=>Response.json())
+            .then((data)=>{
+                ouput.innerText = `${data.contents.translated} ${data.contents.text}`
+            })
+        }
+    </script>
+</body>
+
+</html>

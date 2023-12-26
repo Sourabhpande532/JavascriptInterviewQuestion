@@ -1,0 +1,19 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading button</title>
+</head>
+<body>
+    <!-- Q5: Create a web app with a button loded. Show a text loading... on a web app. However, hide it if I click on the button loaded  -->
+    <h3 class="loading">Loading...</h3>
+    <button id="hide-button">Hide</button>
+    <script>
+     let x = document.querySelector(".loading");
+     let button = document.getElementById("hide-button");
+     button.addEventListener("click",()=>{
+        x.style.display = "none"
+     })
+    </script>
+</body>
+</html>
