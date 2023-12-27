@@ -1,0 +1,39 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Q7</title>
+  </head>
+
+  <body>
+    <!-- Q7: an API. It will give an error. Write a web app, call this API and read the error message. Show user the error message.-->
+
+    <h2 class="textShow">Call API:</h2>
+    <button id="api-call">Call Button</button>
+    <div class="output"></div>
+
+    <script>
+      const output = document.querySelector(".output");
+      const showErrorBtn = document.querySelector("#api-call");
+
+      showErrorBtn.addEventListener("click", showErrorMessage);
+      const apiUrl = "https://jsonplaceholder.typicode.com/posts123456789";
+
+      function showErrorMessage() {
+        fetch(apiUrl)
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Http! Error Message " + `${response.status}`);
+            }
+            return response.json();
+          })
+          .then((data) => {
+            console.log("API Responce ", data);
+          })
+          .catch((error) => {
+            output.innerText = `Error Occured ${error.message}`;
+          });
+      }
+    </script>
+  </body>
+</html>

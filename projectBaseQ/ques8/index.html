@@ -1,0 +1,51 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Q8</title>
+</head>
+
+<body>
+    <!--
+        Q8: Here's an API, it can give two errors. Either 404, or 401. If the error is 404, show the user 'page not found' and if the error is 401, show the user 'you are not logged in'. -->
+    <h3>Show Error</h3>
+    <button id="show-error">Click</button>
+    <p class="output"></p>
+
+    <script>
+        const btn = document.querySelector( "#show-error" );
+        const showMessage = document.querySelector( ".output" );
+        btn.addEventListener( "click", clickHandler );
+        
+        const apiUrl = "https://jsonplaceholder.typicode.com/posts123456789";
+
+        function clickHandler() {
+            // console.log(fetch(apiUrl));
+            fetch( apiUrl )
+                .then( ( res ) => {
+                    if ( !res.ok ) {
+                        // check for error
+                        if ( res.status === 404 ) {
+                            // showMessage.innerText = `Page Not Found`;
+                            throw new Error("Page Not found")
+                        } else if ( res.status === 401 ) {
+                            // showMessage.innerText = `You are not logged in`;
+                            throw new Error ("You are not logged In")
+                        }
+                    } else {
+                        throw new Error(`HTTP!! Error ${res.status}` )
+                    }
+                    return res.json();
+                } )
+                .then( ( data ) => {
+                    console.log( "API Response :", data );
+                } )
+                .catch( ( error ) => {
+                    showMessage.innerText = `Error !!${ error.message }`
+                } )
+        }
+    </script>
+</body>
+
+</html>
