@@ -1,0 +1,74 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Q9</title>
+
+    <style>
+      #password {
+        border: 1px solid red;
+        padding: 5px 10px;
+      }
+
+      .error {
+        color: red;
+      }
+
+      .success {
+        color: green;
+      }
+
+      #submitButton{
+        padding: 4px 9px;
+        background-color: rgb(224, 154, 62);
+        border-radius: 12px;
+        margin: 12px;
+        transition: 0.9;
+        color: whitesmoke;
+        font-weight: bold;
+      }
+
+      #submitButton:hover{
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        font-size: large;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Password Checker</h1>
+    <label for="password">Enter Password:</label>
+    <input type="password" id="password" />
+    <p id="passwordMessage" class="error"></p>
+    <button id="submitButton">Submit</button>
+    <script>
+      /* Q10 Create a password checker web app. If password is lesser than 10 characters then show an error to user otherwise show success.
+Someone can ask to make the submit button disabled. Some can ask to make the input field green or red depending on input. */
+      let inputUserPassword = document.querySelector("#password");
+      let submitButton = document.querySelector("#submitButton");
+      let showResult = document.querySelector("#passwordMessage");
+
+      submitButton.addEventListener("click", () => {
+        inputUserPassword.value.length < 10
+          ? "Error"
+          : (showResult.innerText = "Password successfully Done!!");
+        inputUserPassword.value = null;
+      });
+      submitButton.disabled = true;
+      inputUserPassword.addEventListener("input", () => {
+        let value = inputUserPassword.value;
+        if (value.length < 10) {
+          showResult.innerText = "At least more than 10 char";
+          showResult.className = "error";
+          submitButton.disabled = true;
+        } else {
+          showResult.textContent = "Password is strong";
+          showResult.className = "success";
+          inputUserPassword.style.border = "1px solid green";
+
+          submitButton.disabled = false;
+        }
+      });
+    </script>
+  </body>
+</html>

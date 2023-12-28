@@ -1,51 +1,61 @@
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Q8</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Error Handling</title>
 </head>
-
 <body>
-    <!--
-        Q8: Here's an API, it can give two errors. Either 404, or 401. If the error is 404, show the user 'page not found' and if the error is 401, show the user 'you are not logged in'. -->
-    <h3>Show Error</h3>
-    <button id="show-error">Click</button>
-    <p class="output"></p>
 
-    <script>
-        const btn = document.querySelector( "#show-error" );
-        const showMessage = document.querySelector( ".output" );
-        btn.addEventListener( "click", clickHandler );
-        
-        const apiUrl = "https://jsonplaceholder.typicode.com/posts123456789";
+  <h1>API Error Handling</h1>
+  <button id="callapi">Call API</button>
+  <div id="errorContainer" style="color: red;"></div>
 
-        function clickHandler() {
-            // console.log(fetch(apiUrl));
-            fetch( apiUrl )
-                .then( ( res ) => {
-                    if ( !res.ok ) {
-                        // check for error
-                        if ( res.status === 404 ) {
-                            // showMessage.innerText = `Page Not Found`;
-                            throw new Error("Page Not found")
-                        } else if ( res.status === 401 ) {
-                            // showMessage.innerText = `You are not logged in`;
-                            throw new Error ("You are not logged In")
-                        }
-                    } else {
-                        throw new Error(`HTTP!! Error ${res.status}` )
-                    }
-                    return res.json();
-                } )
-                .then( ( data ) => {
-                    console.log( "API Response :", data );
-                } )
-                .catch( ( error ) => {
-                    showMessage.innerText = `Error !!${ error.message }`
-                } )
-        }
-    </script>
+  <script>
+    let apiBtn = document.querySelector("#callapi");
+    apiBtn.addEventListener("click",callApi)
+
+    // Define API URLs
+    const apiUrl404 = 'https://jsonplaceholder.typicode.com/posts/123456789'; // Simulate a 404 error
+    const apiUrl401 = 'https://jsonplaceholder.typicode.com/posts/1';         // Simulate a 401 error
+
+    // Choose an API URL based on the current timestamp
+    const apiUrl = isEvenTimestamp() ? apiUrl404 : apiUrl401;
+
+    function isEvenTimestamp() {
+      // Get the current timestamp in milliseconds
+      const timestamp = Date.now();
+
+      // Check if the timestamp is even 404
+      return timestamp % 2 === 0;
+    }
+
+    function callApi() {
+      fetch(apiUrl)
+        .then(response => {
+          if (!response.ok) {
+            // Check for specific error status codes
+            if (response.status === 404) {
+              throw new Error('Page not found');
+            } else if (response.status === 401) {
+              throw new Error('You are not logged in');
+            } else {
+              // Handle other HTTP errors
+              throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+          }
+          return response.json();
+        })
+        .then(data => {
+          // Display API response (this block won't be executed in case of an error)
+          console.log('API response:', data);
+        })
+        .catch(error => {
+          // Display the specific error message to the user
+          document.getElementById('errorContainer').innerText = `Error: ${error.message}`;
+        });
+    }
+  </script>
+
 </body>
-
 </html>
