@@ -1,10 +1,66 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Q10</title>
 </head>
+
 <body>
+    <!--Create two objects with name, age, and yuga as Ram, 25, Treta. Krishna, 31, Dwapar. Write a function which takes two objects and return the person with more age.  -->
+    <h3>Check Who is eleder</h3>
+    <p id="ram">Ram</p>
+    <p id="krishna">Krishna</p>
+    <button id="check">Check</button>
+    <div class="ouput"></div>
+
+    <script>
+        let output = document.querySelector( ".ouput" )
+        let button = document.getElementById( "check" );
+
+        let ramCollection = {
+            name: "Ram",
+            age: 50,
+            yuga: "Treta"
+        }
+        let krishnaCollection = {
+            name: "Krishna",
+            age: 31,
+            yuga: "Dwapar"
+        }
     
+        function comapareAges(person1,person2){
+            if(person1.age > person2.age){
+                return person1;
+            }else if(person1.age < person2.age ){
+                return person2
+            }else{
+                return null;
+            }
+        }
+
+        const olderOne = comapareAges(ramCollection,krishnaCollection);
+        // console.log(olderOne);
+        if(olderOne !== null){
+            console.log(`${olderOne.name} is older with the age ${olderOne.age} in yuga of ${olderOne.yuga}`)
+        }else{
+            console.log("Both are is same");
+        }
+
+        function checkAge( ram, krishna ) {
+            if ( ram.age < krishna.age ) {
+                output.innerText = krishna.name + " age is more that " + ram.name;
+            } else {
+                output.innerText = ram.name + " age is more that " + krishna.name;
+
+            }
+        }
+        button.addEventListener( "click", function() {
+            checkAge( ramCollection, krishnaCollection )
+        } );
+
+
+    </script>
 </body>
+
 </html>
