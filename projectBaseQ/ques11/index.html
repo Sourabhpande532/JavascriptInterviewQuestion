@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare Power</title>
+</head>
+
+<body>
+    <!-- 
+Create two objects with name, age, and power as Ram, 2500, Treta. Krishna, 2325, Dwapar. Say if every character in name is worth 35 power points.
+Write a function which takes two objects and return the person with more power based on their name and power both. -->
+    <script>
+        function calculatePower( person ) {
+            let powerName = person.name.length * 35;
+            let totalName = person.power + powerName;
+            return totalName;
+        }
+
+        const ram = {
+            name: 'Ramayan puran',
+            age: 2500,
+            power: 0,
+            yuga: 'Treta',
+        };
+
+        const krishna = {
+            name: 'Krishna',
+            age: 2325,
+            power: 0,
+            yuga: 'Dwapar',
+        };
+
+        function comparePowers( personA, personB ) {
+            let powerA = calculatePower( personA );
+            let powerB = calculatePower( personB );
+            if ( powerA > powerB ) {
+                return personA;
+            } else if ( powerA < powerB ) {
+                return personB
+            } else {
+                return null;
+            }
+        }
+
+        let checkMorePowerful = comparePowers( ram, krishna );
+        console.log( checkMorePowerful );
+        if ( checkMorePowerful !== null ) {
+            console.log( `${ checkMorePowerful.name } is more powerful with a total power of ${ calculatePower( checkMorePowerful ) }.` );
+
+        } else {
+            console.log( 'Both persons have the same power.' );
+        }
+    </script>
+
+</body>
+
+</html>
